@@ -4,7 +4,7 @@ services:
     db:
         image: mysql:5.7
         volumes:
-          - data_db:/var/lib/mysql
+          - .db:/var/lib/mysql
         restart: always
         environment:
             MYSQL_ROOT_PASSWORD: mypassword
@@ -27,5 +27,3 @@ services:
             - .wordpress/plugins:/var/www/html/wp-content/plugins
             - .wordpress/themes:/var/www/html/wp-content/themes
             - .wordpress/uploads:/var/www/html/wp-content/uploads
-volumes:
-    data_db:
